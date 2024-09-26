@@ -1,11 +1,3 @@
-body {
-  background-image: url(./assets/images/bg.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: fit-content;
-}
-
 h1 {
   font-family: 'Outfit';
 }
@@ -15,9 +7,9 @@ h1 {
 .head {
   font-family: 'Outfit';
 }
-.brand {
-  background: #cf9f26;
-  background: linear-gradient(to right, #cf9f26 0%, #6e6817 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.main-section {
+  background-image: url(./assets/images/curve.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }

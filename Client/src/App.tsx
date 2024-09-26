@@ -5,6 +5,8 @@ import Header from './components/Header/Header';
 import InputBar from './components/InputBox/InputBar';
 import OutputBox from './components/OutputBox/OutputBox';
 import axios from 'axios';
+import 'react-toastify/dist/ReactToastify.css';
+import { toast, ToastContainer } from 'react-toastify';
 
 function App() {
   const [shortUrl, setShortUrl] = useState('');
@@ -20,19 +22,29 @@ function App() {
       }
     } catch (error) {
       console.error('Error creating short URL:', error);
-      alert('Failed to shorten the URL. Please try again.');
+      toast.error('Error creating short URL', {
+        position: 'top-center',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+      });
     }
   };
 
   return (
     <>
       <Header />
-      <div className='flex items-center flex-col justify-center h-screen'>
+      <div className='flex items-center  main-section flex-col justify-center h-screen'>
         <InputBar onCreateShortUrl={handleCreateShortUrl} />
         <OutputBox shortUrl={shortUrl} />
       </div>
 
       <Footer />
+      <ToastContainer />
     </>
   );
 }

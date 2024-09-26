@@ -2,20 +2,20 @@ import { OutputComponentProps } from '../../types/Types';
 
 const OutputBox: React.FC<OutputComponentProps> = ({ shortUrl }) => {
   return (
-    <div className='text-center mt-5 border-green border px-1'>
+    <div className='text-center mt-5  p-1'>
       {shortUrl ? (
         <p>
           <a
-            href={`https://aksifyy/${shortUrl}`}
+            href={`http://localhost:8000/${shortUrl}`}
             target='_blank'
             rel='noopener noreferrer'
-            className='text-white'
+            className='text-blue-900 hover:border-b-2 hover:border-blue-900 '
           >
-            {`https://aksifyy/${shortUrl}`}
+            {`tof.fy/${shortUrl}`}
           </a>
         </p>
       ) : (
-        <p>Enter a URL to shorten it.</p>
+        <p></p>
       )}
     </div>
   );

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { InputBarProps } from '../../types/Types.ts';
+import { toast, ToastContainer } from 'react-toastify';
 
 export default function InputBar({ onCreateShortUrl }: InputBarProps) {
   const [longUrl, setLongUrl] = useState('');
@@ -10,26 +11,37 @@ export default function InputBar({ onCreateShortUrl }: InputBarProps) {
     if (longUrl) {
       onCreateShortUrl(longUrl);
     } else {
-      alert('Please enter a URL to shorten.');
+      toast.error('Please Enter a URL', {
+        position: 'top-center',
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+      });
     }
   };
 
   return (
     <div>
       <div className='mx-auto flex justify-center flex-col items-center'>
-        <h1 className='md:text-[2.5rem] text-[1.5rem] pb-8 font-bold text-[#6e6817]'>
-          Paste your URL to be shorted
+        <h1 className='md:text-[2.5rem] text-[1.5rem] pb-8 font-bold text-black '>
+          Paste your <span className='text-[#0573E1]'>URL</span> to be shorted
         </h1>
 
-        <form className='flex flex-row ' onSubmit={handleSubmit}>
+        <form
+          className='flex flex-row border-2 rounded-lg border-[#0573E1] '
+          onSubmit={handleSubmit}
+        >
           <input
             type='text'
             value={longUrl}
             onChange={(e) => setLongUrl(e.target.value)}
-            placeholder='Paste your Link Here '
-            className=' outline-none cursor-[#6e6817] bg-[#0E2A47] md:w-[50vw] w-[70vw] text-white font-thin text-center h-[6vh] border-4 border-[#6e6817]     placeholder:text-center placeholder:'
+            className=' outline-none p-4 cursor-[#6e6817] bg-transparent md:w-[50vw] w-[70vw] text-black font-thin text-center  h-[5vh] rounded-lg    placeholder:text-center placeholder:'
           />
-          <button className='border-4 bg-[#0E2A47] hover:bg-[#6e6817] text hover:text-[#0E2A47] border-[#6e6817] md:px-4 px-2 text-white'>
+          <button className=' bg-[#0573E1]  text-white   md:px-4 px-2 hover:p-4 hover:text-white'>
             Submit
           </button>
         </form>

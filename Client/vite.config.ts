@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/URL': {
-        target: 'http://localhost:8000',
+        target: 'https://toffy.vercel.app/',
         changeOrigin: true,
         secure: false,
       },

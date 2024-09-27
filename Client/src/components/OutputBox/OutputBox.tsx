@@ -6,7 +6,7 @@ const OutputBox: React.FC<OutputComponentProps> = ({ shortUrl }) => {
   const [copySuccess, setcopySuccess] = useState<string>('');
 
   const handleCopyText = () => {
-    const fullUrl = `http://localhost:8000/${shortUrl}`;
+    const fullUrl = `http://toffy.vercel.app/${shortUrl}`;
     navigator.clipboard
       .writeText(fullUrl)
       .then(() => {
@@ -28,7 +28,7 @@ const OutputBox: React.FC<OutputComponentProps> = ({ shortUrl }) => {
           <div className='flex justify-between items-center  bg-white box-shadow rounded-lg  md:w-[55vw] w-[85vw]'>
             <p className='output-box px-3'>
               <a
-                href={`http://localhost:8000/${shortUrl}`}
+                href={`http://toffy.vercel.app/${shortUrl}`}
                 target='_blank'
                 rel='noopener noreferrer'
                 className='text-blue-900 hover:border-b-2 hover:border-blue-900'

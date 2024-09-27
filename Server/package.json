@@ -2,7 +2,7 @@
   "name": "url-shortner",
   "version": "1.0.0",
   "description": "this is url shrotner app developed by toseef rana",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "start": "nodemon server.js",

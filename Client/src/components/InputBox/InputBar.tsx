@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { InputBarProps } from '../../types/Types.ts';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 export default function InputBar({ onCreateShortUrl }: InputBarProps) {
   const [longUrl, setLongUrl] = useState('');
@@ -27,21 +27,21 @@ export default function InputBar({ onCreateShortUrl }: InputBarProps) {
   return (
     <div>
       <div className='mx-auto flex justify-center flex-col items-center'>
-        <h1 className='md:text-[2.5rem] text-[1.5rem] pb-8 font-bold text-black '>
+        <h1 className='md:text-[2.5rem] text-[1.5rem] pb-8 font-bold font-change text-black '>
           Paste your <span className='text-[#0573E1]'>URL</span> to be shorted
         </h1>
 
         <form
-          className='flex flex-row border-2 rounded-lg border-[#0573E1] '
+          className='flex flex-row  border-2 rounded-lg border-blue-500 '
           onSubmit={handleSubmit}
         >
           <input
             type='text'
             value={longUrl}
             onChange={(e) => setLongUrl(e.target.value)}
-            className=' outline-none p-4 cursor-[#6e6817] bg-transparent md:w-[50vw] w-[70vw] text-black font-thin text-center  h-[5vh] rounded-lg    placeholder:text-center placeholder:'
+            className=' outline-none p-4 cursor-[#6e6817] bg-transparent md:w-[50vw] w-[70vw] text-black font-thin text-center  h-[6vh] rounded-lg    placeholder:text-center placeholder:'
           />
-          <button className=' bg-[#0573E1]  text-white   md:px-4 px-2 hover:p-4 hover:text-white'>
+          <button className=' bg-blue-500 hover:bg-blue-600  text-white   md:px-4 px-2 hover:text-white'>
             Submit
           </button>
         </form>

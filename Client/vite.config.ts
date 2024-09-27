@@ -7,7 +7,8 @@ export default defineConfig({
   server: {
     proxy: {
       '/URL': {
-        target: 'https://toffy-onlytoseefs-projects.vercel.app',
+        target:
+          'https://toffy-frontend-59ruoe4qd-onlytoseefs-projects.vercel.app',
         changeOrigin: true,
         secure: false,
       },

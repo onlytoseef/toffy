@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import connectDB from './db/index.js';
 import urlRoute from './routes/url.js';
 import URL from './models/url.js';
+import cors from 'cors';
 
 dotenv.config({});
 connectDB();
@@ -10,6 +11,8 @@ connectDB();
 const app = express();
 
 // Middlewares
+
+app.use(cors({ origin: 'https://toffy-frontend.vercel.app' }));
 app.use(express.json());
 app.use('/URL', urlRoute);
 app.get('/', (req, res) => {

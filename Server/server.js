@@ -12,7 +12,12 @@ const app = express();
 
 // Middlewares
 
-app.use(cors({ origin: 'https://toffy-frontend.vercel.app' }));
+app.use(
+  cors({
+    origin: 'https://toffy-frontend.vercel.app', // Correct usage
+  }),
+);
+
 app.use(express.json());
 app.use('/URL', urlRoute);
 app.get('/', (req, res) => {

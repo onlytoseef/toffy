@@ -12,8 +12,13 @@ function App() {
   const [shortUrl, setShortUrl] = useState('');
 
   const handleCreateShortUrl = async (longUrl: string) => {
+    const API_URL =
+      import.meta.env.MODE === 'development'
+        ? '/URL/shorten'
+        : 'https://toffy.vercel.app/URL/shorten';
+
     try {
-      const response = await axios.post('/URL/shorten', {
+      const response = await axios.post(API_URL, {
         url: longUrl,
       });
 

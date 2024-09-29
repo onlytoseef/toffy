@@ -1,7 +1,7 @@
 import { toast } from 'react-toastify';
 import { OutputComponentProps } from '../../types/Types';
 import React, { useState } from 'react';
-import laoder from '../../assets/loader.svg';
+import laoder from '../../assets/images/loader.svg';
 
 const OutputBox: React.FC<OutputComponentProps> = ({ shortUrl,loading }) => {
   const [copySuccess, setcopySuccess] = useState<string>('');

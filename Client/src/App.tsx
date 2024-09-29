@@ -7,11 +7,12 @@ import OutputBox from './components/OutputBox/OutputBox';
 import axios from 'axios';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast, ToastContainer } from 'react-toastify';
-const [loading, setLoading] = useState(false);
+
 
 function App() {
   const [shortUrl, setShortUrl] = useState('');
-
+const [loading, setLoading] = useState(false);
+  
   const handleCreateShortUrl = async (longUrl: string) => {
      setLoading(true);
     const API_URL =

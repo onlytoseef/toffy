@@ -38,7 +38,7 @@ const OutputBox: React.FC<OutputComponentProps> = ({ shortUrl }) => {
             </p>
             <button
               onClick={handleCopyText}
-              className='copy-btn bg-blue-500 text-white rounded-lg  py-2  hover:bg-blue-600'
+              className='copy-btn bg-blue-500 text-white rounded-lg  px-3 py-2  hover:bg-blue-600'
             >
               Copy Link
             </button>

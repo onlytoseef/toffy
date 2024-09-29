@@ -1,8 +1,9 @@
 import { toast } from 'react-toastify';
 import { OutputComponentProps } from '../../types/Types';
 import React, { useState } from 'react';
+import laoder from '../../assets/loader.svg';
 
-const OutputBox: React.FC<OutputComponentProps> = ({ shortUrl }) => {
+const OutputBox: React.FC<OutputComponentProps> = ({ shortUrl,loading }) => {
   const [copySuccess, setcopySuccess] = useState<string>('');
 
   const handleCopyText = () => {
@@ -23,7 +24,9 @@ const OutputBox: React.FC<OutputComponentProps> = ({ shortUrl }) => {
 
   return (
     <div className='text-center mt-5 p-1'>
-      {shortUrl ? (
+      {loading ? (
+        <img src={laoder} width={70}></img>
+      ) : shortUrl ? (
         <>
           <div className='flex justify-between items-center  bg-white box-shadow rounded-lg  md:w-[55vw] w-[85vw]'>
             <p className='output-box px-3'>

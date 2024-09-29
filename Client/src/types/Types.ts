@@ -3,4 +3,5 @@ export interface InputBarProps {
 }
 export interface OutputComponentProps {
   shortUrl: string;
+  loading: bolean;
 }
